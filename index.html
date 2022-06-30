@@ -9,6 +9,21 @@
     <script src="src/apps.js"></script>
   </head>
   <body>
-    <h1>Hello Page!</h1>
+    <div class="container">
+      <form>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search for a City..."
+          autocomplete="off"
+          autofocus="on"
+        />
+        <input type="submit" id="searchButton" value="Search" />
+        <input type="submit" id="currentLocation" value="Current Location" />
+
+        <h1 id="city">London</h1>
+        <h2 id="date">Current Date</h2>
+      </form>
+    </div>
   </body>
 </html>
