@@ -9,8 +9,9 @@ body {
 }
 
 h1 {
-  color: blue;
+  color: pink;
   text-align: center;
+  font-weight: 900px;
 }
 
 .container {
@@ -21,5 +22,14 @@ h1 {
   padding-right: 25px;
 }
 
-.search {
+#searchButton {
+  text-align: center;
+  height: 38px;
+  border-radius: 4px;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+  text-transform: capitalize;
 }
