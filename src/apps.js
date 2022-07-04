@@ -13,40 +13,56 @@ function displayDescription(response) {
   descriptionElement.innerHTML = response.weather.description;
 }
 
+function displayIcon(response) {
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttibute(
+    "src",
+    "http://openweathermap.org/img/wn/${response.data.weather[0].icon}2x.png"
+  );
+}
+
 let apiKey = "f1bedc417492cf5cdfcb2aa86cb69d69";
 let apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}";
 
+function search(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("cityInput");
+  console.log(cityInputElement.value);
+}
+let form = document.querySelector("search-form");
+form.addEventListener("submit", search);
+
 axios.get(apiUrl).then(displayTemperature);
 
-// let now = new Date();
-// let selecteddate = document.getElementById("date");
-// let date = now.getDate();
-// let days = [
-//   "Sunday",
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thursday",
-//   "Friday",
-//   "Saturday",
-// ];
-// let day = days[now.getDay()];
-// let months = [
-//   "Jan",
-//   "Feb",
-//   "March",
-//   "April",
-//   "May",
-//   "June",
-//   "July",
-//   "August",
-//   "Sept",
-//   "October",
-//   "November",
-//   "December",
-// ];
-// let month = months[now.getMonth()];
-// let year = now.getFullYear();
+let now = new Date();
+let selecteddate = document.getElementById("date");
+let date = now.getDate();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let months = [
+  "Jan",
+  "Feb",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "Sept",
+  "October",
+  "November",
+  "December",
+];
+let month = months[now.getMonth()];
+let year = now.getFullYear();
 
-// selecteddate.innerHTML = `${day} ${month} ${date} ${year}`;
+selecteddate.innerHTML = `${day} ${month} ${date} ${year}`;
