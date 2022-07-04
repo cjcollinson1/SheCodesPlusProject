@@ -4,7 +4,6 @@ function displayTemperature(response) {
 }
 
 function displayCity(response) {
-  console.log(response);
   let cityElement = document.querySelector("#city");
   cityElement.innerText = response.data.main.name;
 }
@@ -22,6 +21,23 @@ function displayIcon(response) {
   );
 }
 
+// Need to check the API response for these paths
+
+function humidity(response) {
+  let humidity = document.querySelector("#humidity");
+  humidityElement.innerText = response.data.main.humidity;
+}
+
+function wind(response) {
+  let wind = document.querySelector("#wind");
+  windElement.innerText = response.data.main.wind;
+}
+
+function precipitation(response) {
+  let precipitation = document.querySelector("precipitation");
+  precipitationElement.innerText = response.data.main.precipitation;
+}
+
 function search(city) {
   let apiKey = "f1bedc417492cf5cdfcb2aa86cb69d69";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
@@ -34,7 +50,6 @@ function searchText(event) {
   search(cityInputElement.value);
 }
 let form = document.querySelector("#search-form");
-console.log(form);
 form.addEventListener("submit", searchText);
 
 // let now = new Date();
