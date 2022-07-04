@@ -21,19 +21,20 @@ function displayIcon(response) {
   );
 }
 
-let apiKey = "f1bedc417492cf5cdfcb2aa86cb69d69";
-let apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}";
+function search(city) {
+  let apiKey = "f1bedc417492cf5cdfcb2aa86cb69d69";
+  let apiUrl =
+    "https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}";
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-function search(event) {
+function searchText(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("cityInput");
-  console.log(cityInputElement.value);
+  search(cityInputElement.value);
 }
 let form = document.querySelector("search-form");
-form.addEventListener("submit", search);
-
-axios.get(apiUrl).then(displayTemperature);
+form.addEventListener("search", searchText);
 
 let now = new Date();
 let selecteddate = document.getElementById("date");
