@@ -36,34 +36,34 @@ function searchText(event) {
 let form = document.querySelector("search-form");
 form.addEventListener("search", searchText);
 
-let now = new Date();
-let selecteddate = document.getElementById("date");
-let date = now.getDate();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "Sept",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-let year = now.getFullYear();
+// let now = new Date();
+// let selecteddate = document.getElementById("date");
+// let date = now.getDate();
+// let days = [
+//   "Sunday",
+//   "Monday",
+//   "Tuesday",
+//   "Wednesday",
+//   "Thursday",
+//   "Friday",
+//   "Saturday",
+// ];
+// let day = days[now.getDay()];
+// let months = [
+//   "Jan",
+//   "Feb",
+//   "March",
+//   "April",
+//   "May",
+//   "June",
+//   "July",
+//   "August",
+//   "Sept",
+//   "October",
+//   "November",
+//   "December",
+// ];
+// let month = months[now.getMonth()];
+// let year = now.getFullYear();
 
-selecteddate.innerHTML = `${day} ${month} ${date} ${year}`;
+// selecteddate.innerHTML = `${day} ${month} ${date} ${year}`;
