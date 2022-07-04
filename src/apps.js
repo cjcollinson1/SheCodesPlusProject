@@ -1,40 +1,41 @@
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerText = response.data.main.temp;
 }
 
 function displayCity(response) {
+  console.log(response);
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.main.city;
+  cityElement.innerText = response.data.main.name;
 }
 
 function displayDescription(response) {
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.weather.description;
+  descriptionElement.innerText = response.data.weather[0].description;
 }
 
 function displayIcon(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttibute(
     "src",
-    "http://openweathermap.org/img/wn/${response.data.weather[0].icon}2x.png"
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}2x.png`
   );
 }
 
 function search(city) {
   let apiKey = "f1bedc417492cf5cdfcb2aa86cb69d69";
-  let apiUrl =
-    "https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function searchText(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("cityInput");
+  let cityInputElement = document.querySelector("#cityInput");
   search(cityInputElement.value);
 }
-let form = document.querySelector("search-form");
-form.addEventListener("search", searchText);
+let form = document.querySelector("#search-form");
+console.log(form);
+form.addEventListener("submit", searchText);
 
 // let now = new Date();
 // let selecteddate = document.getElementById("date");
