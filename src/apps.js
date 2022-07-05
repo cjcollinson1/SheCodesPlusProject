@@ -8,10 +8,14 @@ function displayCity(response) {
   cityElement.innerText = response.data.main.name;
 }
 
+displayCity();
+
 function displayDescription(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerText = response.data.weather[0].description;
 }
+
+displayDescription();
 
 function displayIcon(response) {
   let iconElement = document.querySelector("#icon");
@@ -21,6 +25,8 @@ function displayIcon(response) {
   );
 }
 
+displayDescription();
+
 // Need to check the API response for these paths
 
 function humidity(response) {
@@ -28,21 +34,29 @@ function humidity(response) {
   humidityElement.innerText = response.data.main.humidity;
 }
 
+displayHumidity();
+
 function wind(response) {
   let wind = document.querySelector("#wind");
   windElement.innerText = response.data.main.wind;
 }
+
+displayWind();
 
 function precipitation(response) {
   let precipitation = document.querySelector("precipitation");
   precipitationElement.innerText = response.data.main.precipitation;
 }
 
+displayPrecipitation();
+
 function search(city) {
   let apiKey = "f1bedc417492cf5cdfcb2aa86cb69d69";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemperature);
 }
+
+displayCity();
 
 function searchText(event) {
   event.preventDefault();
@@ -83,3 +97,10 @@ form.addEventListener("submit", searchText);
 // let year = now.getFullYear();
 
 // selecteddate.innerHTML = `${day} ${month} ${date} ${year}`;
+
+function displayforecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = "Forecast";
+}
+
+displayforecast();
