@@ -6,6 +6,7 @@ body {
   margin-bottom: 50px;
   margin-left: 400px;
   margin-right: 400px;
+  background: linear-gradient(120deg, #ffffff 0%, #e7dcc7 100%);
 }
 
 .container {
@@ -14,6 +15,16 @@ body {
   padding-bottom: 100px;
   padding-left: 25px;
   padding-right: 25px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 30px auto;
+  border: 3px solid rgb(54, 53, 53);
+  background-image: linear-gradient(#ffffff, #f3d8cb);
+}
+
+.weather-item {
+  display: inline-block;
+  width: 75px;
 }
 
 #search-form {
@@ -25,18 +36,33 @@ body {
 #city {
   font-weight: 900px;
   padding: 20px;
+  color: 878787;
+  line-height: 32px;
 }
 
-li {
+li,
+span {
   list-style: none;
-  font-size: 15px;
+  font-size: 18px;
   text-transform: capitalize;
+  margin-bottom: 2px;
+}
+
+.stats {
+  text-align: right;
+  margin-right: 30px;
+  margin-top: 2px;
+}
+
+.icon img {
+  height: 120px;
+  width: auto;
 }
 
 .weather-forecast {
   margin-top: 18px;
   text-align: center;
-  opacity: 0.6;
+  opacity: 0.8;
   color: black;
 }
 

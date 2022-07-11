@@ -53,32 +53,50 @@
         </div>
       </form>
 
-        <h1 id="city">London</h1>
+        <h1 id="city"></h1>
         <div>
           <ul>
-            <li id="selecteddate">Current Date</li>
-            <li id="description">Cloudy</li>
-            <li id="temperature">26ºC</li>
+            <li id="selecteddate"></li>
+            <li id="description"></li>
+            <li><span id="temperature"></span><span>ºC</span></li>
+            </br>
+             <div class="stats" class="row-second">
+             
+          
+          <span>
+           <strong>Humidity:</strong>
+           </span>
+          <span id="humidity">Humidity</span>
+          <span>
+            %
+          </span>
+        </br>
+          <span> <strong>Wind:</strong></span>
+          <span id="wind">Wind</span>
+          <span>
+            mph
+          </span>
+  
+</div>
           </ul>
         </div>
 
-        <div>
+        <div class="icon">
           <img
             src="http://openweathermap.org/img/wn/10d@2x.png"
             alt="weather icon"
             id="icon"
+    
+          
           />
         </div>
-        <div>
-          <p id="humidity">Humidity:</p>
-          <p id="wind">Wind:</p>
-          <p id="precipitation">Preciptiation</p>
-        </div>
-
+ 
+  
         <div class="weather-forecast" id="forecast">
           <div class="row">
-            <div class="col-2">
-            <div class="weather-forecast-date">
+            <!-- <div class="col-2"> -->
+              <div class="weather">
+              <div class="weather-forecast-date">
               Mon
             </div>
             <div>
@@ -99,9 +117,11 @@
           </div>
         </div>
         <p>Open Source Code by <strong>Charlotte Collinson</strong></p>
-      </form>
+      <!-- </form> -->
     </div>
         <script src="src/apps.js"></script>
-
+<script>
+  search("London");
+</script>
   </body>
 </html>
